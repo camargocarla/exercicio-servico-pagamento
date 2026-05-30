@@ -1,0 +1,25 @@
+# Aciona a pipeline toda vez que houver mudança na branch main
+trigger:
+- main
+
+# Define que a pipeline vai rodar em uma máquina virtual Linux
+pool:
+  vmImage: ubuntu-latest
+
+# Passo a passo das tarefas que a pipeline vai executar
+steps:
+# 1. Instala a versão do Node.js
+- task: NodeTool@0
+  inputs:
+    versionSpec: '20.x'
+  displayName: 'Instalar Node.js'
+
+# 2. Instala as dependências (o Mocha)
+- script: |
+    npm install
+  displayName: 'Instalar dependências (npm install)'
+
+# 3. Executa os testes automatizados
+- script: |
+    npm test
+  displayName: 'Rodar os testes do Mocha'
