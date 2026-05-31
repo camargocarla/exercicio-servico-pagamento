@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
 "scripts": {
-  "test": "mocha --reporter xunit > test-results.xml"
+  "test": "mocha --reporter xunit --reporter-options output=test-results.xml"
   },
   "keywords": [],
   "author": "",
