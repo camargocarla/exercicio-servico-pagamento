@@ -9,7 +9,7 @@ pool:
 # Passo a passo das tarefas que a pipeline vai executar
 steps:
 # 1. Instala a versão do Node.js
-- task: NodeTool@0
+- task: NodeTool@1
   inputs:
     versionSpec: '20.x'
   displayName: 'Instalar Node.js'
