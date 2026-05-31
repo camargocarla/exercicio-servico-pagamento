@@ -21,7 +21,7 @@ steps:
 
 # 3. Executa os testes automatizados
 - script: |
-    npm test
+    npx mocha --reporter xunit > test-results.xml
   displayName: 'Rodar os testes do Mocha'
 
 # 4. Publica o relatório de testes no Azure DevOps
