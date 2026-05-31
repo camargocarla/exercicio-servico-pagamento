@@ -4,7 +4,7 @@ trigger:
 
 # Define que a pipeline vai rodar em uma máquina virtual Linux
 pool:
-  vmImage: ubuntu-latest
+  name: 'Default'
 
 # Passo a passo das tarefas que a pipeline vai executar
 steps:
