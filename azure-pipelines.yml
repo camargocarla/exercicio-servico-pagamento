@@ -23,3 +23,11 @@ steps:
 - script: |
     npm test
   displayName: 'Rodar os testes do Mocha'
+
+# 4. Publica o relatório de testes no Azure DevOps
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'XUnit'
+    testResultsFiles: '**/test-results.xml'
+    failTaskOnFailedTests: true
+  displayName: 'Publicar Relatório de Testes'
